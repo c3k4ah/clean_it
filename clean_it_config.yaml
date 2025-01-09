@@ -1,0 +1,39 @@
+features:
+
+  article:
+    DTO:
+      model: ArticleModel
+      entity: ArticleEntity
+
+    domain_repository: ArticleRepository
+    data_repository: ArticleRepositoryImpl
+    remote_source: ArticleRemote
+
+    usecases:
+      - name: GetAllArticlesUseCase
+        method: getAllArticles
+        return_type: List<ArticleEntity>
+        params_type: NoParams
+      - name: CreateArticleUseCase
+        method: createArticle
+        return_type: ArticleEntity
+        params_type: ArticleEntity
+
+  user:
+    DTO:
+      model: UserModel
+      entity: UserEntity
+
+    domain_repository: UserRepository
+    data_repository: UserRepositoryImpl
+    remote_source: UserRemote
+
+    usecases:
+      - name: GetAllUsersUseCase
+        method: getAllUsers
+        return_type: List<UserEntity>
+        params_type: NoParams
+      - name: CreateUserUseCase
+        method: createUser
+        return_type: UserEntity
+        params_type: UserEntity
